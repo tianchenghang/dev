@@ -158,6 +158,10 @@ export default defineComponent(() => {
               技术栈: vite, react, react-router, axios, zustand, dayjs, sass, tailwind, antd,
               WebSocket, express, express-ws, mysql, redis 等
             </div>
+            <ul>
+              <li>使用 react-router和 HOC 高阶组件实现前端路由守卫, 路由重定向等功能</li>
+              <li>对于大文件传输场景, 实现了分片上传, 断点续传, 重传, 秒传和下载功能</li>
+            </ul>
           </div>
         </div>
       </CvCard>
