@@ -8,7 +8,7 @@ export default defineComponent(() => {
   const handleClick = (ev: MouseEvent) => {
     ev.preventDefault()
     if (timer) {
-      return // throttle
+      return
     }
     const classList = (ev.target as HTMLHeadElement).classList
     classList.add('animate__animated', 'animate__bounceIn')
@@ -17,6 +17,12 @@ export default defineComponent(() => {
       timer = null
     }, 3000)
   }
+
+  //! Access to fetch at 'https://space.bilibili.com/448719894' from origin 'http://localhost:5173' has been blocked by CORS policy
+  // fetch('https://space.bilibili.com/448719894')
+  //   .then(console.log)
+
+  // fetch('/api/448719894').then(console.log)
 
   return () => (
     <div>
@@ -71,7 +77,7 @@ export default defineComponent(() => {
       <CvCard header="教育经历">
         <ul>
           <li class="grid grid-cols-3">
-            <div>本科: 2019 - 2023</div>
+            <div>本科: 2019-2023</div>
             <div>西安电子科技大学</div>
             <div>微电子科学与工程</div>
           </li>
@@ -86,7 +92,7 @@ export default defineComponent(() => {
       <CvCard header="技能清单">
         <ul class="ml-[20px] list-disc">
           <li>熟悉 CSS, tailwindcss, Sass, 了解 CSS 原子化, CSS 模块化</li>
-          <li>熟悉 JS/TS, 熟悉 ES6 语法, monorepo, 了解 Node.js, pm2, 熟悉 express.js</li>
+          <li>熟悉 JS/TS, 熟悉 ES6 语法, monorepo, 了解 Node.js, pm2, express.js</li>
           <li>
             熟悉 vue3, pinia, vue-router, 了解 Vue3 响应式原理, 性能优化, 了解 AST 的遍历转换过程
           </li>
@@ -95,7 +101,9 @@ export default defineComponent(() => {
           <li>熟悉 git, 有良好的开发习惯, 了解 husky, CI/CD</li>
           <li>熟悉 vite, 包括双引擎架构, 依赖预处理, 模块热更新, CSS 模块化等; 了解 webpack</li>
           <li>了解 Web 性能优化, 了解 FCP 等 Web 性能指标, 有 Vue3 前端监控插件开发经验</li>
-          <li>对 SEO, 服务器端渲染有一定的了解</li>
+          <li>
+            对服务器渲染, nuxt 框架有一定的了解, 有 nuxt 集成 eslint, tailwindcss, mongodb 相关经验
+          </li>
           <li>对创建前端 UI 有强烈的兴趣和成就感</li>
         </ul>
       </CvCard>
